@@ -6,9 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todolist</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/0c4a005ebc.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="container">
+      <h1>Todo List</h1>
+      <form id="form">
+        <input
+          type="text"
+          name="input"
+          id="input"
+          placeholder="Add your new todo"
+        />
+        <button type="submit">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </form>
+
+      <div id="getLists"></div>
+      <!-- <div class="lists">
+        <p id="postedTask">Buy Me a New Car1</p>
+        <button class="trash" type="menu">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+      <div class="lists">
+        <p id="postedTask">Buy Me a New Car2</p>
+        <button class="trash" type="menu">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+      <div class="lists">
+        <p id="postedTask">Buy Me a New Car3</p>
+        <button class="trash" type="menu">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div> -->
+
+      <div class="pendingDiv">
+        <p id="message"></p>
+        <button id="clear">Clear All</button>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
