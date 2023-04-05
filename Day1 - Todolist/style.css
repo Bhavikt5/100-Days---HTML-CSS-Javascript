@@ -16,7 +16,7 @@ body {
   );
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
+  padding: 2rem;
 }
 
 .container {
@@ -75,6 +75,9 @@ body {
   background-color: rgb(230, 228, 228);
   line-height: 40px;
   padding: 0 10px;
+  list-style: none;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 
 .lists .trash {
@@ -92,11 +95,11 @@ body {
   border: none;
 }
 
-.lists i:hover {
+.lists .trash:hover {
   background-color: red;
 }
 
-.pendingDiv {
+#pendingDiv {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -104,12 +107,12 @@ body {
   margin: 1rem 0;
 }
 
-.pendingDiv p {
+#pendingDiv p {
   color: rgb(101, 100, 100);
   font-weight: 500;
 }
 
-.pendingDiv button {
+#pendingDiv button {
   padding: 10px 20px;
   background-color: #9347ef;
   border-radius: 4px;
