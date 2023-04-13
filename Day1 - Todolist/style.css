@@ -75,9 +75,12 @@ body {
   background-color: rgb(230, 228, 228);
   line-height: 40px;
   padding: 0 10px;
+  padding-right: 50px;
   list-style: none;
   text-transform: capitalize;
   font-weight: 500;
+  overflow-wrap: anywhere;
+  cursor: pointer;
 }
 
 .lists .trash {
@@ -97,6 +100,11 @@ body {
 
 .lists .trash:hover {
   background-color: red;
+}
+
+.lists.active {
+  text-decoration: line-through;
+  color: red;
 }
 
 #pendingDiv {

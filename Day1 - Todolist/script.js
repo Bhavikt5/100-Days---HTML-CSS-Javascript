@@ -15,8 +15,7 @@ function submitForm(e) {
     li.classList.add("lists");
     content.appendChild(li);
     let trash = document.createElement("button");
-    const trashClass = ["trash", "fa-solid", "fa-trash"];
-    trash.classList.add(...trashClass);
+    trash.classList.add("trash", "fa-solid", "fa-trash");
     li.appendChild(trash);
 
     saveData();
@@ -29,6 +28,8 @@ content.addEventListener("click", (e) => {
   if (e.target.tagName === "BUTTON") {
     e.target.parentNode.remove();
     saveData();
+  } else if (e.target.tagName === "LI") {
+    e.target.classList.toggle("active");
   }
 });
 
@@ -41,3 +42,6 @@ function showData() {
 }
 
 showData();
+
+const fetchData = fetch("https://jsonplaceholder.typicode.com/todos/10");
+fetchData.then((response) => response.json()).then((json) => console.log(json));
