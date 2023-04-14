@@ -53,4 +53,45 @@ for (let i = 0; i < accordion.length; i++) {
 
 /*=============== DARK LIGHT THEME ===============*/
 
+const darkModeToggle = document.querySelector("#dark-mode-toggle");
+
+const lightMode = document.querySelector(".fa-sun");
+const darkedMode = document.querySelector(".fa-moon");
+
+lightMode.style.display = "none";
+
+const enableDarkMode = () => {
+  // 1. Add the class to the body
+  document.body.classList.add("darkmode");
+
+  darkedMode.style.display = "none";
+  lightMode.style.display = "block";
+};
+
+const disableDarkMode = () => {
+  // 1. Remove the class from the body
+  document.body.classList.remove("darkmode");
+
+  darkedMode.style.display = "block";
+  lightMode.style.display = "none";
+};
+
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 1500,
+  delay: 300,
+  // reset: true,
+});
+
+sr.reveal("#home .content h1, .title");
+sr.reveal("#home .content .bannerpara, .titleContent", { delay: 400 });
+sr.reveal(".searchbar, .accordionDiv, .cardBoxDiv, .swiper", { delay: 500 });
+sr.reveal(".homebox", { delay: 700 });
+sr.reveal(".bannerImg img, .valueImg img, .contactImg img", {
+  origin: "bottom",
+  delay: 500,
+});
+sr.reveal(".logos", { origin: "left", delay: 500, duration: 2000 });

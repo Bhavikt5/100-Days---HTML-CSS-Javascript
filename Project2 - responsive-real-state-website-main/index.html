@@ -46,8 +46,8 @@
         </nav>
 
         <div>
-          <i class="fa-solid fa-moon"></i>
-          <!-- <i class="fa-solid fa-sun"></i> -->
+          <i class="fa-solid fa-moon" onclick="enableDarkMode()"></i>
+          <i class="fa-solid fa-sun" onclick="disableDarkMode()"></i>
         </div>
         <button class="btn">Contact</button>
       </div>
@@ -56,7 +56,7 @@
     <!--==================== MAIN ====================-->
     <main class="main">
       <!--==================== HOME ====================-->
-      <section class="home section" id="home">
+      <section class="home" id="home">
         <div class="content">
           <h1>
             Discover <br />
@@ -64,7 +64,7 @@
             Property
           </h1>
 
-          <p>
+          <p class="bannerpara">
             Find a variety of properties that suit you very easily, forget all
             difficulties in finding a residence for you
           </p>
@@ -96,7 +96,7 @@
       </section>
 
       <!--==================== LOGOS ====================-->
-      <section class="logos section">
+      <section class="logos">
         <img src="/assets/img/logo1.png" alt="logo1" />
         <img src="/assets/img/logo2.png" alt="logo2" />
         <img src="/assets/img/logo3.png" alt="logo3" />
@@ -104,7 +104,7 @@
       </section>
 
       <!--==================== POPULAR ====================-->
-      <section class="section" id="popular">
+      <section class="" id="popular">
         <div class="title">
           <p><span>Best Choice</span></p>
           <h3 class="section__title">Popular Residences<span>.</span></h3>
@@ -174,7 +174,7 @@
       </section>
 
       <!--==================== VALUE ====================-->
-      <section class="value section" id="value">
+      <section class="value" id="value">
         <div class="valueImg">
           <img src="/assets/img/value.jpg" alt="value" />
         </div>
@@ -231,7 +231,7 @@
       </section>
 
       <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact">
+      <section class="contact" id="contact">
         <div class="contactImg">
           <img src="/assets/img/contact.png" alt="contact" />
         </div>
@@ -282,7 +282,7 @@
               <div class="upper">
                 <i class="fa-solid fa-message"></i>
                 <div>
-                  <h5>Chat</h5>
+                  <h5>Message</h5>
                   <p>000.000.0000</p>
                 </div>
               </div>
@@ -293,16 +293,67 @@
       </section>
 
       <!--==================== SUBSCRIBE ====================-->
-      <section class="subscribe section"></section>
+      <section class="subscribe">
+        <div class="box">
+          <h2>Get Started with RealEstate</h2>
+          <p>
+            Subscribe and find super attractive price quotes from us, Find your
+            residence soon
+          </p>
+
+          <button>Get Started</button>
+        </div>
+      </section>
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer section"></footer>
+    <footer class="footer">
+      <div class="leftFooter">
+        <h4>RealEstate</h4>
+        <p>
+          Our vision is to make all people <br />
+          the best place to live for them.
+        </p>
+      </div>
+      <div class="rightFooter">
+        <div class="content">
+          <h4>About</h4>
+          <ul>
+            <li>About us</li>
+            <li>Features</li>
+            <li>News & Blog</li>
+          </ul>
+        </div>
+        <div class="content">
+          <h4>Company</h4>
+          <ul>
+            <li>How We work</li>
+            <li>capital</li>
+            <li>security</li>
+          </ul>
+        </div>
+        <div class="content">
+          <h4>Support</h4>
+          <ul>
+            <li>FAQs</li>
+            <li>support center</li>
+            <li>contact us</li>
+          </ul>
+        </div>
+        <div class="content">
+          <h4>Movement</h4>
+          <ul>
+            <li>what RealEstate</li>
+            <li>support us</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <!--========== SCROLL UP ==========-->
 
     <!--=============== SCROLLREVEAL ===============-->
-    <script src=""></script>
+    <script src="/assets/js/scrollreveal.min.js"></script>
 
     <!--=============== SWIPER JS ===============-->
     <script src="/assets/js/swiper-bundle.min.js"></script>

@@ -6,7 +6,6 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(228, 66%, 53%);
   --first-color-alt: hsl(228, 66%, 47%);
   --first-color-light: hsl(228, 62%, 59%);
@@ -15,41 +14,19 @@
   --title-color: hsl(228, 57%, 28%);
   --text-color: hsl(228, 15%, 50%);
   --text-color-light: hsl(228, 12%, 75%);
-  --border-color: hsl(228, 99%, 98%);
-  --body-color: #fff;
   --container-color: #fff;
-
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
+  --background: #fff;
   --body-font: "Poppins", sans-serif;
-  --biggest-font-size: 2.25rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
-
-  /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
+  --bannerBg: #171616;
+  --boxshadow: -1px 3px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive typography */
-@media screen and (min-width: 1024px) {
-  :root {
-    --biggest-font-size: 4rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
-  }
+.darkmode {
+  --first-color-lighten: lightgray;
+  --background: rgb(23, 21, 21);
+  --bannerBg: black;
+  --title-color: hsl(240, 9%, 90%);
+  --boxshadow: -1px 3px 8px 0px rgba(250, 248, 248, 0.2);
 }
 
 /*=============== BASE ===============*/
@@ -57,6 +34,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: 0.3s;
 }
 
 html {
@@ -65,7 +43,6 @@ html {
 
 body {
   font-family: var(--body-font);
-  transition: 0.3s; /* For animation dark mode */
 }
 
 ul {
@@ -113,7 +90,7 @@ button {
 }
 
 .section__title {
-  font-size: var(--h2-font-size);
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--title-color);
 }
@@ -139,8 +116,13 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
-  background-color: #101010;
+  background-color: var(--bannerBg);
   height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
 }
 
 .logo h3 {
@@ -193,8 +175,8 @@ nav a:hover {
 .home {
   display: flex;
   justify-content: center;
-  padding: 0 10%;
-  background-color: #101010;
+  padding: 5% 10%;
+  background-color: var(--bannerBg);
   position: relative;
 }
 
@@ -246,6 +228,7 @@ nav a:hover {
   height: 550px;
   border-radius: 50% 50% 0 0;
   position: absolute;
+  z-index: 8;
 }
 
 .homebox {
@@ -268,9 +251,9 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
+  padding: 5rem 0 0;
   gap: 2rem;
-  background-color: var(--container-color);
+  background-color: var(--background);
 }
 
 .logos img {
@@ -280,7 +263,8 @@ span {
 /*=============== POPULAR ===============*/
 
 #popular {
-  padding: 0 10%;
+  padding: 10% 10% 0;
+  background-color: var(--background);
 }
 
 .card img {
@@ -313,7 +297,8 @@ span {
 
 #value {
   display: flex;
-  padding: 10% 5%;
+  padding: 10% 5% 0;
+  background-color: var(--background);
 }
 
 .valueImg {
@@ -386,7 +371,8 @@ span {
 .contact {
   display: flex;
   flex-direction: row-reverse;
-  padding: 0 10%;
+  padding: 10% 10% 0;
+  background-color: var(--background);
 }
 
 .contactImg {
@@ -395,7 +381,7 @@ span {
 
 .contact .content {
   flex: 1;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
 .contactImg img {
@@ -407,13 +393,14 @@ span {
 
 .cardBoxDiv {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   padding: 1rem;
   flex-wrap: wrap;
 }
 
 .cardBox {
-  box-shadow: -1px 3px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--boxshadow);
   border-radius: 8px;
   padding: 10px;
 }
@@ -458,7 +445,87 @@ span {
 
 /*=============== SUBSCRIBE ===============*/
 
+.subscribe {
+  padding: 5% 10%;
+  background-color: var(--background);
+}
+
+.subscribe .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 5%;
+  background-color: var(--first-color);
+  border: 10px solid rgba(111, 129, 170, 0.8);
+  border-radius: 10px;
+}
+
+.subscribe .box h2 {
+  color: var(--container-color);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.subscribe .box p {
+  color: var(--container-color);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.subscribe .box button {
+  border: 2px solid var(--container-color);
+  background-color: var(--first-color-light);
+  color: var(--container-color);
+  cursor: pointer;
+  border-radius: 14px;
+  font-size: 1rem;
+  padding: 10px;
+}
+
 /*=============== FOOTER ===============*/
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10% 10% 5%;
+  background-color: var(--background);
+}
+
+.leftFooter h4 {
+  color: var(--title-color);
+  font-size: 2rem;
+}
+
+.leftFooter p {
+  color: var(--text-color);
+  font-size: 0.8rem;
+}
+
+.rightFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.rightFooter .content h4 {
+  color: var(--title-color);
+  margin-bottom: 0.3rem;
+}
+
+.rightFooter .content ul li {
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  margin-bottom: 0.3rem;
+  transition: 0.3s;
+}
+
+.rightFooter .content ul li:hover {
+  color: var(--first-color);
+}
 
 /*=============== SCROLL BAR ===============*/
 
@@ -482,6 +549,10 @@ span {
   #contact {
     padding: 0;
   }
+
+  .footer {
+    padding: 5%;
+  }
 }
 
 /* For small devices */
@@ -501,7 +572,7 @@ span {
 
   .home {
     flex-direction: column;
-    padding: 0 5%;
+    padding: 10% 5%;
   }
 
   .home .content h1 {
@@ -529,13 +600,13 @@ span {
   }
 
   #popular {
-    padding: 0 5%;
+    padding: 16% 5%;
   }
 
   #value {
     flex-direction: column;
     align-items: center;
-    padding: 10% 5%;
+    padding: 16% 5%;
   }
 
   #value .content {
@@ -545,11 +616,50 @@ span {
   #contact {
     flex-direction: column;
     align-items: center;
-    padding: 0 5%;
+    padding: 16% 5%;
   }
 
   #contact .content {
     padding: 1rem 0;
+  }
+
+  .cardBoxDiv {
+    padding: 1rem 0;
+  }
+
+  .subscribe {
+    padding: 5%;
+  }
+
+  .subscribe .box h2 {
+    font-size: 1.3rem;
+  }
+
+  .subscribe .box p {
+    font-size: 0.8rem;
+  }
+
+  .subscribe .box button {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 10rem;
+  }
+
+  .leftFooter p {
+    font-size: 1rem;
+  }
+
+  .rightFooter {
+    gap: 3rem;
+    justify-content: space-around;
+  }
+
+  .rightFooter .content h4 {
+    font-size: 1.3rem;
   }
 }
 /* For large devices */
